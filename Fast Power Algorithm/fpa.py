@@ -14,21 +14,17 @@ def fpa(a,m,s):
     powers = power2(m)
     n = len(powers)
     modulus = []
-    final = []
     product = 1
     num = a
     for i in range(n):
         num = num % s
         modulus.append(num)
-        final.append(powers[i] * modulus[i])
-        if final[i]:
-            product = product * final [i]
+        if powers[i]:
+            product = product * modulus [i] %s
         num = num ** 2
-    product1 = product % s
     print(modulus)
-    print (final)
     print (product)
-    print (product1)
+    return product
 
 fpa(5,1375,37)
 print((5**1375)%37)
